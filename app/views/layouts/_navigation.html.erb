@@ -1,0 +1,22 @@
+<nav class="navbar">
+  <h2>Budget App</h2>
+  <ul class="nav-list">
+    <% if user_signed_in? %>
+      <li><%= link_to 'Home', root_path, class: "nav-btn" %></li>
+    <% end %>
+    <% if user_signed_in? %>
+      <li>Transaction</li>
+      <li>Category</li>
+      <li id="user-tab" class="nav-btn">User</li>
+        <ul class="user-info-list" id="user-info">
+          <li class = "nav-btn">Logged In with</li>
+          <li class = "nav-btn">Name: <%= current_user.name %></li>
+          <li class = "nav-btn">Email: <%= current_user.email %></li>
+          <li class = "nav-btn"><%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "btn" %></li>
+        </ul>
+    <% else %>
+      <li><%= link_to 'Log in', new_user_session_path, class: "btn" %></li>
+      <li><%= link_to 'Sign up', new_user_registration_path, class: "btn" %></li>
+    <% end %>
+  </ul>
+</nav>
