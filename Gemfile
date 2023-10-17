@@ -60,6 +60,9 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 
+  # Email Confirmation
+  gem 'letter_opener'
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -72,3 +75,6 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+
+gem 'cancancan', '~> 1.9'
+gem 'devise', '~> 4.9'
