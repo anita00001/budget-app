@@ -10,9 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_17_073246) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_18_085104) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cash_flow_categories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "cash_flow_id", null: false
+    t.bigint "category_id", null: false
+    t.index ["cash_flow_id"], name: "index_cash_flow_categories_on_cash_flow_id"
+    t.index ["category_id"], name: "index_cash_flow_categories_on_category_id"
+  end
+
+  create_table "cash_flows", force: :cascade do |t|
+    t.string "name"
+    t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "author_id", null: false
+    t.index ["author_id"], name: "index_cash_flows_on_author_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "icon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_categories_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +59,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_073246) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cash_flow_categories", "cash_flows"
+  add_foreign_key "cash_flow_categories", "categories"
+  add_foreign_key "cash_flows", "users", column: "author_id"
+  add_foreign_key "categories", "users"
 end
