@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.home-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(236, 219, 198);
+}
+
+.app-name {
+  margin-top: 30vh;
+}
+
+.btn-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 2%;
+}
+
+.login-btn,
+.sign-up-btn {
+  width: 98%;
+  background: #37b0c2;
+  padding: 1.5rem 0;
+  text-align: center;
+  color: #fff;
+  border-radius: 1rem;
+}
+
+.sign-up-btn {
+  background: #cdc7c7;
+  color: #000;
+}
