@@ -4,9 +4,4 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
-  enum role: %i[user admin]
-
-  def admin?
-    role == 'admin'
-  end
 end
