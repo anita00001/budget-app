@@ -1,0 +1,35 @@
+<section class="main-container">
+  <div class="headline">
+    <%= link_to categories_path do %>
+      <div class="back-arrow">&larr;</div>
+    <% end %>
+    <h2>Add Categories</h2>
+    <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "btn" %>
+  </div>
+
+  <div class="add-form-container">
+    <%= form_with model: @category do |f| %>
+      <div>
+        <%= f.label "Category Name", class: "label" %><br>
+        <%= f.text_field :name, placeholder: "Enter Category Name", class: "input-field" %>
+      </div>
+
+      <% @icon_options = [
+        ['Shopping', 'https://img.icons8.com/?size=50&id=JWv_lqo5fs4F&format=png'],
+        ['Traveling', 'https://img.icons8.com/?size=50&id=108778&format=png'],
+        ['Technology', 'https://img.icons8.com/?size=50&id=104090&format=png'],
+        ['Health and Fitness', 'https://img.icons8.com/?size=50&id=40521&format=png'],
+        ['Food and Dining', 'https://img.icons8.com/?size=50&id=118431&format=png'],
+        ['Entertainment', 'https://img.icons8.com/?size=50&id=12012&format=png'],
+        ['Finance', 'https://img.icons8.com/?size=50&id=13009&format=png'],
+        ['Education', 'https://img.icons8.com/?size=50&id=vo1XcGH8QAag&format=png'],
+        ['Others', 'https://img.icons8.com/?size=50&id=108779&format=png']
+      ] %>
+
+      <%= f.label "Category Type: Select Icon", class: "label" %><br>
+      <%= f.select :icon, options_for_select(@icon_options), {}, class: 'input-field icon-options' %>
+
+      <%= f.submit class: "form-submit-btn" %>
+    <% end %>
+  </div>
+</section>
