@@ -1,10 +1,9 @@
 <section class="main-container">
   <div class="headline">
     <%= link_to categories_path do %>
-      <div class="back-arrow">&larr;</div>
+      <div class="arrow">&larr;</div>
     <% end %>
-    <h2>Add Categories</h2>
-    <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "btn" %>
+    <h2 class="add-new">Add Categories</h2>
   </div>
 
   <div class="add-form-container">

@@ -13,11 +13,16 @@
 .headline {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 1rem;
   background: #3778c2;
 }
 
-.back-arrow {
+.add-new {
+  width: 90%;
+  text-align: center;
+}
+
+.arrow {
   font-size: 2rem;
 }
 

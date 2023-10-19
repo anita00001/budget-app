@@ -1,10 +1,12 @@
 <section class="main-container">
   <div class="headline">
     <%= link_to categories_path do %>
-      <div class="back-arrow">&larr;</div>
+      <div class="arrow">&larr;</div>
     <% end %>
     <h2>Transactions</h2>
-    <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "btn" %>
+    <%= link_to new_category_cash_flow_path(@category) do %>
+      <div class="arrow">&rarr;</div>
+    <% end %>
   </div>
 
   <div class="transaction-container">
