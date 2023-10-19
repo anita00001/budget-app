@@ -7,6 +7,33 @@
     <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "btn" %>
   </div>
 
+  <div class="transaction-container">
+    <div class="category-wrapper">
+      <div class="category-icon">
+        <img src="<%= @category.icon %>" class="icon">
+      </div>
+
+      <div class="category-details">
+        <%= link_to @category.name, class: "category-name" %>
+      </div>
+    </div>
+
+    <% @cash_flow.each do |cash_flow| %>
+      <div class="transaction-details">
+        <p class="name-amount"><%= cash_flow.name %>
+          <span>$<%= cash_flow.amount %></span>
+        </p>
+        <p class="date-time"><%= cash_flow.created_at.strftime('%Y-%b-%d') %>
+        at <%= cash_flow.created_at.strftime('%H:%M:%S') %></p>
+      </div>
+    <% end %>
+
+    <div class="total-transaction">Total Transaction 
+      <span>$<%= @total_amount %></span>
+    </div>
+    
+  </div>
+
   <div class="add-category">
     <%= link_to "Add a new Transaction", new_category_cash_flow_path(@category), class: "add-btn" %>
   </div>

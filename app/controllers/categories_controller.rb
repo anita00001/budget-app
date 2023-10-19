@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   def index
     @categories = Category.includes(:cash_flows).order(created_at: :desc).all
@@ -7,7 +8,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.includes(:cash_flows).find(params[:id])
-    @cash_flow = @category.cash_flows.order(created_at: :desc).all
+    @cash_flow = @category.cash_flows.order(created_at: :desc)
     @total_amount = @category.cash_flows.sum(&:amount)
   end
 

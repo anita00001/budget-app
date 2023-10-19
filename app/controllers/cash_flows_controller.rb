@@ -3,14 +3,15 @@ class CashFlowsController < ApplicationController
   load_and_authorize_resource
 
   def new
-    @select_options = Category.all
+    @select_option = Category.all
     @category = Category.find(params[:category_id])
     @cash_flow = CashFlow.new
   end
 
   def create
-    @cash_flow = CashFlow.new(cash_flow_params)
+    @cash_flow = CashFlow.create(cash_flow_params)
     @category = Category.find(params[:category_id])
+    @cash_flow.categories << @category
     if @cash_flow.save
       redirect_to category_path(@category)
     else

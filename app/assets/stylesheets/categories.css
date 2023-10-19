@@ -21,7 +21,8 @@
   font-size: 2rem;
 }
 
-.categories-container {
+.categories-container,
+.transaction-container {
   display: flex;
   flex-direction: column;
   padding: 1rem 2rem;
@@ -123,4 +124,28 @@ label {
   border-radius: 5px;
   font-size: 1rem;
   margin-bottom: 1rem;
+}
+
+.transaction-details {
+  border: 1px solid #d6d4d4;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.name-amount,
+.total-transaction {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-time {
+  color: #434b54;
+  padding-top: 0.8rem;
+}
+
+.total-transaction {
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: #fff;
+  border-top: 1px solid #d6d4d4;
 }
