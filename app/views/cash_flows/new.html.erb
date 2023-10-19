@@ -1,0 +1,24 @@
+<section class="main-container">
+  <div class="headline">
+    <%= link_to category_path(@category) do %>
+      <div class="arrow">&larr;</div>
+    <% end %>
+    <h2 class="add-new">Add Transaction</h2>
+  </div>
+
+  <div class="add-form-container">
+    <%= form_for [@category, @cash_flow] do |f| %>
+      <div>
+        <%= f.label "Transaction Name", class: "label" %>
+        <%= f.text_field :name, class: "input-field" %>
+      </div>
+
+      <div>
+        <%= f.label :amount, class: "label" %>
+        <%= f.text_field :amount, class: "input-field" %>
+      </div>
+
+      <%= f.submit "Add Transaction", class: "form-submit-btn" %>
+    <% end %>
+  </div>
+</section>

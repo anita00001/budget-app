@@ -1,8 +1,11 @@
 <section class="main-container">
   <div class="headline">
-    <div class="back-arrow">&larr;</div>
-    <h2>Categories</h2>
     <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "btn" %>
+    <h2>Categories</h2>
+    <%= link_to new_category_path do %>
+      <div class="arrow">&rarr;</div>
+    <% end %>
+
   </div>
 
   <div class="categories-container">
@@ -24,5 +27,9 @@
         </div>
       <% end %>
     <% end %>
+  </div>
+
+  <div class="add-category">
+    <%= link_to "Add a new Category", new_category_path, class: "add-btn" %>
   </div>
 </section>
