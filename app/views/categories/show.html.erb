@@ -1,0 +1,13 @@
+<section class="main-container">
+  <div class="headline">
+    <%= link_to categories_path do %>
+      <div class="back-arrow">&larr;</div>
+    <% end %>
+    <h2>Transactions</h2>
+    <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "btn" %>
+  </div>
+
+  <div class="add-category">
+    <%= link_to "Add a new Transaction", new_category_cash_flow_path(@category), class: "add-btn" %>
+  </div>
+</section>

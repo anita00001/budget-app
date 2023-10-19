@@ -5,6 +5,12 @@ class CategoriesController < ApplicationController
     @categories = Category.includes(:cash_flows).order(created_at: :desc).all
   end
 
+  def show
+    @category = Category.includes(:cash_flows).find(params[:id])
+    @cash_flow = @category.cash_flows.order(created_at: :desc).all
+    @total_amount = @category.cash_flows.sum(&:amount)
+  end
+
   def new
     @category = Category.new
   end

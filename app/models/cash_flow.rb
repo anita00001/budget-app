@@ -1,5 +1,4 @@
 class CashFlow < ApplicationRecord
-  belongs_to :users
   has_many :cash_flow_categories
   has_many :categories, through: :cash_flow_categories
 
