@@ -1,0 +1,35 @@
+<section class="main-container">
+  <div class="headline">
+    <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "log-out" %>
+    <h2>CATEGORIES</h2>
+    <%= link_to new_category_path do %>
+      <div class="arrow">&rarr;</div>
+    <% end %>
+
+  </div>
+
+  <div class="categories-container">
+    <% @categories.each do |category| %>
+      <% if can? :read, category %>
+        <div class="category-wrapper">
+          <div class="category-icon">
+            <img src="<%= category.icon %>" class="icon">
+          </div>
+
+          <div class="category-details">
+            <%= link_to category.name, category_path(category), class: "category-name" %>
+            <p class="category-date"><%= category.created_at.strftime('%Y-%b-%d') %></p>
+          </div>
+
+          <div class="total-amount">
+            <p>$<%= category.cash_flows.sum(:amount) %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="add-category">
+    <%= link_to "ADD NEW CATEGORY", new_category_path, class: "add-btn" %>
+  </div>
+</section>

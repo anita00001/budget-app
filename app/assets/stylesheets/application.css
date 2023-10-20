@@ -13,3 +13,73 @@
  *= require_tree .
  *= require_self
  */
+
+.devise {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem auto;
+  max-width: 25rem;
+  padding-bottom: 3rem;
+}
+
+.form-heading {
+  font-size: 2rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 0 1.2rem;
+  min-width: 85%;
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-top: -0.5rem;
+}
+
+.form-input {
+  margin-top: -0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #213535;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid #213535;
+  border-radius: 0.25rem;
+  background-color: #213535;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.btn:hover {
+  color: #2076f7;
+  background-color: inherit;
+  border-color: #2076f7;
+}
+
+a {
+  text-decoration: none;
+  color: #2f4f4f;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #1267c8;
+}
