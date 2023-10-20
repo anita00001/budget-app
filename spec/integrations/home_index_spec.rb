@@ -8,13 +8,13 @@ RSpec.describe 'Home Page', type: :feature do
 
   scenario 'Visit the home page and click on login button' do
     visit root_path
-    click_on 'Login'
+    click_on 'LOG IN'
     expect(page).to have_content('Log in')
   end
 
   scenario 'Visit the home page and click on sign up button' do
     visit root_path
-    click_on 'Sign Up'
+    click_on 'SIGN UP'
     expect(page).to have_content('Sign up')
   end
 
@@ -25,8 +25,8 @@ RSpec.describe 'Home Page', type: :feature do
     expect(page).to have_selector('.app-name', text: 'Budget Buddy')
 
     within('.btn-wrapper') do
-      expect(page).to have_link('Login', href: new_user_session_path, class: 'login-btn')
-      expect(page).to have_link('Sign Up', href: new_user_registration_path, class: 'sign-up-btn')
+      expect(page).to have_link('LOG IN', href: new_user_session_path, class: 'login-btn')
+      expect(page).to have_link('SIGN UP', href: new_user_registration_path, class: 'sign-up-btn')
     end
   end
 end

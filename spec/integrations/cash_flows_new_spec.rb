@@ -11,7 +11,7 @@ RSpec.describe 'Cash Flows New Page', type: :feature do
 
   scenario 'Visit the cash flows new page' do
     visit new_category_cash_flow_path(@category)
-    expect(page).to have_content('Add Transaction')
+    expect(page).to have_content('ADD TRANSACTION')
   end
 
   scenario 'Create a new cash flow' do
@@ -28,6 +28,6 @@ RSpec.describe 'Cash Flows New Page', type: :feature do
     fill_in '', with: ''
     click_button 'Add Transaction'
     visit new_category_cash_flow_path(@category)
-    expect(page).to have_content('Add Transaction')
+    expect(page).to have_content('ADD TRANSACTION')
   end
 end
