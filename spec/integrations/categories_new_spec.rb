@@ -11,7 +11,7 @@ RSpec.describe 'Categories New Page', type: :feature do
 
   scenario 'Visit the categories new page' do
     visit new_category_path
-    expect(page).to have_content('Add Categories')
+    expect(page).to have_content('ADD CATEGORY')
     expect(page).to have_content('Category name')
     expect(page).to have_content('Category type: select icon')
   end

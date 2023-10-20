@@ -11,7 +11,7 @@ RSpec.describe 'Categories Show Page', type: :feature do
 
   scenario 'Visit the categories show page' do
     visit category_path(@category)
-    expect(page).to have_content('Transactions')
+    expect(page).to have_content('TRANSACTIONS')
   end
 
   scenario 'Categories show page details' do
@@ -28,7 +28,7 @@ RSpec.describe 'Categories Show Page', type: :feature do
 
   scenario 'Link to create a new Transaction' do
     visit category_path(@category)
-    click_link 'Add a new Transaction'
+    click_link 'ADD NEW TRANSACTION'
     visit new_category_cash_flow_path(@category)
   end
 end

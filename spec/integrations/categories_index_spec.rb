@@ -11,12 +11,12 @@ RSpec.describe 'Categories Index Page', type: :feature do
 
   scenario 'Visit the categories index page' do
     visit categories_path
-    expect(page).to have_content('Categories')
+    expect(page).to have_content('CATEGORIES')
   end
 
   scenario 'Link to create a new category' do
     visit categories_path
-    click_link 'Add a new Category'
+    click_link 'ADD NEW CATEGORY'
     visit new_category_path
   end
 
