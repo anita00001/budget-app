@@ -1,7 +1,7 @@
 <section class="main-container">
   <div class="headline">
-    <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "btn" %>
-    <h2>Categories</h2>
+    <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "log-out" %>
+    <h2>CATEGORIES</h2>
     <%= link_to new_category_path do %>
       <div class="arrow">&rarr;</div>
     <% end %>
@@ -30,6 +30,6 @@
   </div>
 
   <div class="add-category">
-    <%= link_to "Add a new Category", new_category_path, class: "add-btn" %>
+    <%= link_to "ADD NEW CATEGORY", new_category_path, class: "add-btn" %>
   </div>
 </section>
