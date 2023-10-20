@@ -25,7 +25,7 @@
 
 > A **BUDGET BUDDY** is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
-> To know more about the app, watch this [Video Presentation](https://drive.google.com/file/d/15xbmuU3o9ElexqBmzX12OQOQS2WAlvBB/view?usp=sharing) !
+> To know more about the app, watch this [Video Presentation](https://drive.google.com/file/d/1l4qSnJaSKza9l23IToKTFOyQMhb7jij5/view) !
 
 > [Live Demo Link](https://budget-application-xjpp.onrender.com/) of the app !
 
